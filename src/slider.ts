@@ -26,7 +26,6 @@ class Slider {
    * go to next image
    */
   next() {
-    console.log('clicked next');
     this.gotoImage(this.currentSlide+1);
   }
 
@@ -34,7 +33,6 @@ class Slider {
    * go to previous image
    */
   prev() {
-    console.log('clicked prev');
     this.gotoImage(this.currentSlide-1);
   }
 

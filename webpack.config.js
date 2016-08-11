@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var typeLib = path.join(__dirname, 'typings.d.ts');
+
 var config = {
   cache: true,
   devtool: 'source-map',
@@ -17,9 +19,9 @@ var config = {
   },
   module: {
     loaders: [
-      { test: /\.ts$/,   loader: 'awesome-typescript-loader' }
-      // { test: /\.html/,  loader: 'raw-loader' },
-      // { test: /\.css$/,  loader: 'to-string-loader!css-loader' },
+      { test: /\.ts$/,   loader: 'awesome-typescript-loader' , exclude: /node_modules/},
+      { test: /\.html/,  loader: 'raw-loader' },
+      { test: /\.css$/,  loader: 'to-string-loader!css-loader' }
     ]
   },
 
@@ -41,6 +43,8 @@ var config = {
     process: true,
     Buffer: false,
     crypto: 'empty',
+    child_process: 'empty',
+    fs: 'empty',
     module: false,
     clearImmediate: false,
     setImmediate: false,

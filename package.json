@@ -2,10 +2,10 @@
   "name": "slider",
   "version": "0.0.1",
   "description": "Image Slider",
-  "main": "index.js",
+  "main": "dist/slider.bundle.js",
   "scripts": {
     "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --host 0.0.0.0 --content-base src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "keywords": [
     "image",
@@ -14,7 +14,19 @@
   "author": "Aco Mitevski",
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^3.4.30",
+    "@types/mocha": "^2.2.29",
     "awesome-typescript-loader": "^2.1.1",
+    "chai": "^3.5.0",
+    "karma": "^1.1.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.0.2",
+    "raw-loader": "^0.5.1",
+    "to-string-loader": "^1.1.4",
     "typescript": "^1.8.10",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
