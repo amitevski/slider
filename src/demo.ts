@@ -5,7 +5,7 @@ let images = [
   'http://placebear.com/g/600/350',
   'http://lorempixel.com/600/350/?3',
   'http://lorempixel.com/600/350/?4',
-   'http://lorempixel.com/600/350/?5'
+  'http://lorempixel.com/600/350/?5'
 ];
 let elements = document.getElementsByClassName('slider');
 

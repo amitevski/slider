@@ -232,4 +232,4 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=slider.bundle.js.map
+//# sourceMappingURL=slider.library.js.map

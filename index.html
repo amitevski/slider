@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title>Demo Page</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <link href="./src/slider.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>Slider Demo</h1>
+
+    <div class="slider"></div>
+
+    <script src="./dist/slider.bundle.js"></script>
+    <script>
+      var images = [
+        'http://placekitten.com/g/600/350',
+        'http://placebear.com/g/600/350',
+        'http://lorempixel.com/600/350/?3',
+        'http://lorempixel.com/600/350/?4',
+        'http://lorempixel.com/600/350/?5'
+      ];
+      var elements = document.getElementsByClassName('slider');
+
+      new Slider.Slider(elements[0], images);
+    </script>
+  </body>
+</html>
