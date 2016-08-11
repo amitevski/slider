@@ -2,6 +2,21 @@
   position: relative;
 }
 
+.slider-img {
+  -webkit-animation: fadeinout 0.3s linear forwards;
+  animation: fadeinout 0.3s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .slider-img img {
   width: 100%;
   height: auto;

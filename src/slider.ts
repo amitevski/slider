@@ -1,5 +1,7 @@
 import { TouchHandler } from './touch-handler';
 
+const ANIMATION_TIME = 300;
+
 export /**
  * Slider
  */
@@ -16,7 +18,8 @@ class Slider {
     this.totalSlides = this.images.length;
     this.addImageContainer();
     this.images.map( this.addImage.bind(this) );
-    this.imageElements[this.currentSlide].style.display = 'block';
+    // this.imageElements[this.currentSlide].style.display = 'block';
+    this.showImage(this.imageElements[this.currentSlide]);
     this.addCounter();
     this.addArrows();
     this.setupTouchListeners();
@@ -36,6 +39,22 @@ class Slider {
     this.gotoImage(this.currentSlide-1);
   }
 
+  private showImage(imgEl: any) {
+    setTimeout( () => {
+      imgEl.style.display = 'block';
+    }, ANIMATION_TIME);
+    setTimeout( () => {
+      imgEl.style.opacity = '1';
+    }, ANIMATION_TIME)*2;
+  }
+
+  private hideImage(imgEl: any) {
+    imgEl.style.opacity = '0';
+    setTimeout( () => {
+      imgEl.style.display = 'none';
+    }, ANIMATION_TIME);
+  }
+
   /**
    * go to given image number
    */
@@ -44,7 +63,8 @@ class Slider {
      * if given number doesnt exist goto to end/beginning of images
      * update counter
      */
-    this.imageElements[this.currentSlide].style.display = 'none';
+    this.hideImage(this.imageElements[this.currentSlide]);
+    // this.imageElements[this.currentSlide].style.display = 'none';
     if (n > this.imageElements.length-1) {
       this.currentSlide = 0;
     } else if (n < 0) {
@@ -53,7 +73,8 @@ class Slider {
       this.currentSlide = n;
     }
 
-    this.imageElements[this.currentSlide].style.display = 'block';
+    // this.imageElements[this.currentSlide].style.display = 'block';
+    this.showImage(this.imageElements[this.currentSlide]);
     this.updateCounter();
   }
 
@@ -83,6 +104,7 @@ class Slider {
     let imageSlide = document.createElement('div');
     imageSlide.className = 'slider-img';
     imageSlide.appendChild(img);
+    imageSlide.style.opacity = '0';
     imageSlide.style.display = 'none';
     this.imageElements.push(imageSlide);
     this.imageContainer.appendChild(imageSlide);

@@ -1,8 +1,8 @@
 import {Slider} from './slider';
 
 let images = [
-  'http://lorempixel.com/600/350/?1',
-  'http://lorempixel.com/600/350/?2',
+  'http://placekitten.com/g/600/350',
+  'http://placebear.com/g/600/350',
   'http://lorempixel.com/600/350/?3',
   'http://lorempixel.com/600/350/?4',
    'http://lorempixel.com/600/350/?5'
