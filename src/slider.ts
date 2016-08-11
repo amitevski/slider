@@ -1,4 +1,4 @@
-
+import { TouchHandler } from './touch-handler';
 
 export /**
  * Slider
@@ -10,6 +10,7 @@ class Slider {
   imageContainer: Element;
   imageElements: any[] = [];
   counterElement: Element;
+  touchHandler: TouchHandler;
 
   constructor(private element: Element, private images: string[]) {
     this.totalSlides = this.images.length;
@@ -18,6 +19,7 @@ class Slider {
     this.imageElements[this.currentSlide].style.display = 'block';
     this.addCounter();
     this.addArrows();
+    this.setupTouchListeners();
   }
 
   /**
@@ -104,22 +106,24 @@ class Slider {
   private addArrows() {
     let prevImg = '❮',
       nextImg = '❯';
-    let nextButton = document.createElement('button');
+    let nextButton = document.createElement('a');
     nextButton.className = 'slider-next';
+    nextButton.href = '#';
     nextButton.innerText = nextImg;
     nextButton.onclick = this.next.bind(this);
-    let prevButton = document.createElement('button');
+    let prevButton = document.createElement('a');
     prevButton.className = 'slider-prev';
+    prevButton.href = '#';
     prevButton.innerText = prevImg;
     prevButton.onclick = this.prev.bind(this);
-    this.element.appendChild(prevButton);
-    this.element.appendChild(nextButton);
+    this.imageContainer.appendChild(prevButton);
+    this.imageContainer.appendChild(nextButton);
   }
 
   /**
    * setup touch event listeners
    */
   private setupTouchListeners() {
-
+    this.touchHandler = new TouchHandler(this.imageContainer, this.prev.bind(this), this.next.bind(this));
   }
 }

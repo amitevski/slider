@@ -4,7 +4,7 @@
   "description": "Image Slider",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --host 0.0.0.0 --content-base src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
