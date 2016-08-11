@@ -6,7 +6,7 @@ This is a tiny image gallery without use of any 3rd party libraries.
 
 In order to use it as library you need to include the prebuilt JavaScript library in `dist/slider.library.js` and the css file in `src/slider.css`.
 
-You can [sample html file](https://github.com/amitevski/slider/blob/master/index.html) directly in the source folder. 
+You can find a [sample html file](https://github.com/amitevski/slider/blob/master/index.html) directly in the source folder. 
 
 
 ## Development
