@@ -56,6 +56,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	var touch_handler_1 = __webpack_require__(1);
+	/**
+	 * delay before adding/removing an image.
+	 * this should be aligned to the css animation
+	 * time for selector ".slider-img"" in "src/slider.css" file.
+	 */
 	var ANIMATION_TIME = 300;
 	var Slider = (function () {
 	    function Slider(element, images) {
@@ -67,7 +72,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.totalSlides = this.images.length;
 	        this.addImageContainer();
 	        this.images.map(this.addImage.bind(this));
-	        // this.imageElements[this.currentSlide].style.display = 'block';
 	        this.showImage(this.imageElements[this.currentSlide]);
 	        this.addCounter();
 	        this.addArrows();
@@ -85,6 +89,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Slider.prototype.prev = function () {
 	        this.gotoImage(this.currentSlide - 1);
 	    };
+	    /**
+	     * show image delayed in order to add css animation
+	     */
 	    Slider.prototype.showImage = function (imgEl) {
 	        setTimeout(function () {
 	            imgEl.style.display = 'block';
@@ -93,6 +100,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            imgEl.style.opacity = '1';
 	        }, ANIMATION_TIME) * 2;
 	    };
+	    /**
+	     * hide image animated in order to add css animation
+	     */
 	    Slider.prototype.hideImage = function (imgEl) {
 	        imgEl.style.opacity = '0';
 	        setTimeout(function () {
@@ -108,7 +118,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * update counter
 	         */
 	        this.hideImage(this.imageElements[this.currentSlide]);
-	        // this.imageElements[this.currentSlide].style.display = 'none';
 	        if (n > this.imageElements.length - 1) {
 	            this.currentSlide = 0;
 	        }
@@ -118,7 +127,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else {
 	            this.currentSlide = n;
 	        }
-	        // this.imageElements[this.currentSlide].style.display = 'block';
 	        this.showImage(this.imageElements[this.currentSlide]);
 	        this.updateCounter();
 	    };
