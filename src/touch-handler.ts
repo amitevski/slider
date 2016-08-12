@@ -3,6 +3,9 @@ const MIN_DISTANCE = 30;
 
 export /**
  * TouchHandler
+ * 
+ * calls given leftHandler if it detects a left swipe
+ * calls given rightHandler if it detects a right swipe
  */
 class TouchHandler {
 

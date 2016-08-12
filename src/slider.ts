@@ -1,9 +1,18 @@
 import { TouchHandler } from './touch-handler';
 
+/**
+ * delay before adding/removing an image.
+ * this should be aligned to the css animation
+ * time for selector ".slider-img"" in "src/slider.css" file.
+ */
 const ANIMATION_TIME = 300;
+
 
 export /**
  * Slider
+ * 
+ * renders an image gallery into given element
+ * that includes the given images
  */
 class Slider {
 
@@ -18,7 +27,6 @@ class Slider {
     this.totalSlides = this.images.length;
     this.addImageContainer();
     this.images.map( this.addImage.bind(this) );
-    // this.imageElements[this.currentSlide].style.display = 'block';
     this.showImage(this.imageElements[this.currentSlide]);
     this.addCounter();
     this.addArrows();
@@ -39,6 +47,9 @@ class Slider {
     this.gotoImage(this.currentSlide-1);
   }
 
+  /**
+   * show image delayed in order to add css animation
+   */
   private showImage(imgEl: any) {
     setTimeout( () => {
       imgEl.style.display = 'block';
@@ -48,6 +59,9 @@ class Slider {
     }, ANIMATION_TIME)*2;
   }
 
+  /**
+   * hide image animated in order to add css animation
+   */
   private hideImage(imgEl: any) {
     imgEl.style.opacity = '0';
     setTimeout( () => {
@@ -64,7 +78,6 @@ class Slider {
      * update counter
      */
     this.hideImage(this.imageElements[this.currentSlide]);
-    // this.imageElements[this.currentSlide].style.display = 'none';
     if (n > this.imageElements.length-1) {
       this.currentSlide = 0;
     } else if (n < 0) {
@@ -73,7 +86,6 @@ class Slider {
       this.currentSlide = n;
     }
 
-    // this.imageElements[this.currentSlide].style.display = 'block';
     this.showImage(this.imageElements[this.currentSlide]);
     this.updateCounter();
   }
