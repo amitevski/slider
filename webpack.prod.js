@@ -25,9 +25,9 @@ var config = {
     ]
   },
 
-  // plugins: [
-  //   new webpack.optimize.CommonsChunkPlugin({ name: ['polyfills', 'vendor', 'main'].reverse(), minChunks: Infinity }),
-  // ],
+  plugins: [
+    //uncomment to uglify new webpack.optimize.UglifyJsPlugin()
+  ],
 
   resolve: {
     extensions: ['', '.ts', '.js']
