@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/amitevski/slider.svg?branch=master)](https://travis-ci.org/amitevski/slider)
+
 # Image Gallery Slider
 
 This is a tiny image gallery without use of any 3rd party libraries.

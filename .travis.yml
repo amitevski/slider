@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "4"
+cache:
+  directories:
+    - node_modules
+env:
+  global:
+  - alias webpack=./node_modules/.bin/webpack
+  - alias karma=./node_modules/.bin/karma
+  - alias webpack-dev-server=./node_modules/.bin/webpack-dev-server
+  
+install:
+  - npm install
+
+script:
+  - npm test
